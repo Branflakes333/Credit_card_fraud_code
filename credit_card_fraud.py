@@ -12,12 +12,12 @@ def compare_hist(df, param, type):
 
     fig, axes = plt.subplots(1, 3)
     ax = axes.ravel()
-    ax[0].hist(df[param, "Total"], bins=100)
-    ax[0].set_title(param)
-    ax[1].hist(type_t[param, type, "=TRUE"], bins=100)
-    ax[1].set_title(param)
-    ax[2].hist(type_f[param, type, "=FALSE"], bins=100)
-    ax[2].set_title(param)
+    ax[0].hist(df[param], bins=100)
+    ax[0].set_title(param, "Total")
+    ax[1].hist(type_t[param], bins=100)
+    ax[1].set_title(param, type, "=TRUE")
+    ax[2].hist(type_f[param], bins=100)
+    ax[2].set_title(param, type, "=FALSE")
 
     plt.tight_layout()
 
